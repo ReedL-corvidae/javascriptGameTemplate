@@ -1,19 +1,27 @@
-import{Toolbox} from "./toolbox.js";
+import { Toolbox } from "./toolbox.js";
 
 let canvas = document.getElementById("myCanvas");
-let pencil = canvas.getContext("2d"); 
+let pencil = canvas.getContext("2d"); // This gives you the drawing context, like a pencil
+let toolbox = new Toolbox();
 
-let arr = ["a", "b", "c"];
-
-//gets a random number 0 -> array.length, given an array
+let myFavoriteLetters = ["a", "b", "c"];
 
 
 // let counts = [0,0,0];
-for(let i = 0; i<100; i++) {
-    // let randomIndex = getRandomIndex(arr);
-    // counts[randomIndex] = counts[randomIndex] + 1;
+// for(let i = 0; i < 100; i++) {
+//     let randomIndex = getRandomIndex(myFavoriteLetters);
+//     counts[randomIndex] += 1;
 
-    console.log(Toolbox.getRandomItem(arr));
-}
+//     console.log(toolbox.getRandomItem(myFavoriteLetters));
+// }
 
-// console.log(counts);
+let shuffled = toolbox.shuffleArray(myFavoriteLetters);
+console.log(shuffled);
+
+let colors = toolbox.getRandomColor();
+console.log(colors);
+
+//Rectangle Draw
+
+// pencil.fillStyle = colors;
+// pencil.fillRect(50,50,100,100);
